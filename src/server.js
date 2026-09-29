@@ -4,22 +4,20 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import dotenv from 'dotenv';
 
-import appConfig from '../app.config.js';
-import searchRoutes from './routes/search.js';
-import hadithRoutes from './routes/hadith.js';
-import translateRoutes from './routes/translate.js';
-import languagesRoutes from './routes/languages.js';
-import dailyRoutes from './routes/daily.js';
-import valuesRoutes from './routes/values.js';
-import { initSearchIndex } from './search/search-engine.js';
-import { startValuesPrewarm } from './values/prewarm.js';
-import { isAiConfigured, getConfiguredModel } from './ai/gemini.js';
-import { initializeRouter, getRouterStatus } from './ai/router.js';
-import { rateLimiter, sanitizeInput, securityHeaders, translationRateLimiter } from './middleware/security.js';
+import appConfig from './app.config.js';
+import searchRoutes from '../routes/search.js';
+import hadithRoutes from '../routes/hadith.js';
+import translateRoutes from '../routes/translate.js';
+import languagesRoutes from '../routes/languages.js';
+import dailyRoutes from '../routes/daily.js';
+import valuesRoutes from '../routes/values.js';
+import { initSearchIndex } from '../search/search-engine.js';
+import { startValuesPrewarm } from '../values/prewarm.js';
+import { isAIConfigured, getConfigureModel } from '../ai/gemini.js';
+import { initializeRouter, getRouterStatus } from '../ai/router.js';
+import { rateLimiter, sanitizeInput, securityHeaders, translationRateLimiter } from '../middleware/security.js';
 
 dotenv.config();
-
-const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
