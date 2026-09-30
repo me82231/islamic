@@ -18,6 +18,8 @@ import { initializeRouter, getRouterStatus } from '../ai/router.js';
 import { rateLimiter, sanitizeInput, securityHeaders, translationRateLimiter } from '../middleware/security.js';
 
 dotenv.config();
+
+dotenv.config();
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
