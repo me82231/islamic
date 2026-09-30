@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import dotenv from 'dotenv';
 
-import appConfig from '../app.config.js';
+import appConfig from './app.config.js';
 import searchRoutes from './routes/search.js';
 import hadithRoutes from './routes/hadith.js';
 import translateRoutes from './routes/translate.js';
